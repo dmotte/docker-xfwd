@@ -7,14 +7,24 @@
 
 > :package: This image is also on **Docker Hub** as [`dmotte/xfwd`](https://hub.docker.com/r/dmotte/xfwd) and runs on **several architectures** (e.g. amd64, arm64, ...). To see the full list of supported platforms, please refer to the [`.github/workflows/main.yml`](.github/workflows/main.yml) file. If you need an architecture which is currently unsupported, feel free to open an issue.
 
-## Usage
+## Simple usage
 
-TODO
+The simplest way to try this image is:
 
 ```bash
-docker-compose exec main bash -ec 'apt-get update; apt-get install -y x11-apps'
-docker-compose exec -{u,eUSER=}mainuser -{eHOME=,w}/home/mainuser main xclock
+docker run -d --name=xfwd01 -v/tmp/.X11-unix/X0:/opt/xfwd/host.sock:ro -v"${XAUTHORITY:?}:/opt/xfwd/host.xauth:ro" dmotte/xfwd
 ```
+
+Then you can install and run some **graphical application** inside the container:
+
+```bash
+docker exec -it xfwd01 bash -ec 'apt-get update; apt-get install -y x11-apps'
+docker exec -it -{u,eUSER=}mainuser -{eHOME=,w}/home/mainuser xfwd01 xclock
+```
+
+![Screenshot](screen-01TODO.png)
+
+## Standard usage
 
 The [`docker-compose.yml`](docker-compose.yml) file contains a complete usage example for this image. Feel free to simplify it and adapt it to your needs. Unless you want to build the image from scratch, comment out the `build: build` line to use the pre-built one from _Docker Hub_ instead.
 
@@ -28,6 +38,13 @@ Then you can view the logs using this command:
 
 ```bash
 docker-compose logs -ft
+```
+
+Then you can install and run some **graphical application** inside the container:
+
+```bash
+docker-compose exec main bash -ec 'apt-get update; apt-get install -y x11-apps'
+docker-compose exec -{u,eUSER=}mainuser -{eHOME=,w}/home/mainuser main xclock
 ```
 
 This image supports **running commands at container startup** by mounting custom scripts at `/opt/startup-early/*.sh` and `/opt/startup-late/*.sh`. This is the same approach used by [dmotte/desktainer](https://github.com/dmotte/desktainer).
