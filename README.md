@@ -12,8 +12,8 @@
 TODO
 
 ```bash
-docker-compose exec -it main bash -ec 'apt-get update; apt-get install -y x11-apps'
-docker-compose exec -it -{u,eUSER=}mainuser -{eHOME=,w}/home/mainuser main xclock
+docker-compose exec main bash -ec 'apt-get update; apt-get install -y x11-apps'
+docker-compose exec -{u,eUSER=}mainuser -{eHOME=,w}/home/mainuser main xclock
 ```
 
 The [`docker-compose.yml`](docker-compose.yml) file contains a complete usage example for this image. Feel free to simplify it and adapt it to your needs. Unless you want to build the image from scratch, comment out the `build: build` line to use the pre-built one from _Docker Hub_ instead.
