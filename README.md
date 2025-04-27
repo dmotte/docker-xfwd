@@ -22,7 +22,7 @@ docker exec -it xfwd01 bash -ec 'apt-get update; apt-get install -y x11-apps'
 docker exec -it -{u,eUSER=}mainuser -{eHOME=,w}/home/mainuser xfwd01 xclock
 ```
 
-![Screenshot](screen-01TODO.png)
+![Screenshot](screen-01.png)
 
 ## Standard usage
 
