@@ -6,8 +6,8 @@ RUN apt-get update && \
 
 COPY --chown=root:root --chmod=755 startup.sh /
 
-RUN install -dm700 /opt/startup-early /opt/startup-late && \
-    install -dm755 /opt/xfwd
+RUN install -dvm700 /opt/startup-early /opt/startup-late && \
+    install -dvm755 /opt/xfwd
 
 ENV LC_ALL=C.UTF-8
 RUN echo '#!/bin/bash\n\nexport LC_ALL=C.UTF-8' \
