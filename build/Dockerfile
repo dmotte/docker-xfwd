@@ -15,4 +15,4 @@ RUN echo '#!/bin/bash\n\nexport LC_ALL=C.UTF-8' \
 
 ENV DISPLAY=:0 XAUTHORITY=/opt/xfwd/container.xauth
 
-ENTRYPOINT ["/startup.sh"]
+ENTRYPOINT ["/bin/bash", "/startup.sh"]
