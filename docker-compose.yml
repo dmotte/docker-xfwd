@@ -5,8 +5,6 @@ services:
     build: build
     restart: always
     volumes:
-      - /etc/timezone:/etc/timezone:ro
-      - /etc/localtime:/etc/localtime:ro
       - /tmp/.X11-unix/X0:/opt/xfwd/host.sock:ro
       - ${XAUTHORITY:?}:/opt/xfwd/host.xauth:ro
     environment:
