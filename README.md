@@ -5,7 +5,7 @@
 
 :whale: Run **graphical applications** in a Docker container.
 
-> :package: This image is also on **Docker Hub** as [`dmotte/xfwd`](https://hub.docker.com/r/dmotte/xfwd) and runs on **several architectures** (e.g. amd64, arm64, ...). To see the full list of supported platforms, please refer to the [`.github/workflows/main.yml`](.github/workflows/main.yml) file. If you need an architecture which is currently unsupported, feel free to open an issue.
+> :package: This image is also on **Docker Hub** as [`dmotte/xfwd`](https://hub.docker.com/r/dmotte/xfwd) and runs on **several architectures** (e.g. amd64, arm64, ...). To see the full list of supported platforms, please refer to the [`.github/workflows/main.yml`](.github/workflows/main.yml) file. If you need an architecture that is currently unsupported, feel free to open an issue.
 
 ## Simple usage
 
